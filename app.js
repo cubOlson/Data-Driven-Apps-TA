@@ -2,6 +2,7 @@
 
 const express = require('express');
 const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
 
 const routes = require('./routes');
 
@@ -9,6 +10,8 @@ const app = express();
 
 app.set('view engine', 'pug');
 app.use(morgan('dev'));
+app.use(cookieParser());
+app.use(express.urlencoded({ extended: false }));
 app.use(routes);
 
 // Catch unhandled requests and forward to error handler.
