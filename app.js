@@ -21,7 +21,7 @@ app.use((req, res, next) => {
     next(err);
   });
   
-// Custom error handlers.
+// Cool custom error handlers.
 
 // Error handler to log errors.
 app.use((err, req, res, next) => {
